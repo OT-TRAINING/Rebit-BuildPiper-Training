@@ -2,12 +2,12 @@
 Rebit-BuildPiper-Training
 
 ## Build Backend Image
-```cd backend/
-docker build -t project-backend .```
+```cd backend/```
+```docker build -t project-backend .```
 
 ## Build Frontend Image
-```cd ../frontend
-docker build -t project-frontend .```
+```cd ../frontend```
+```docker build -t project-frontend .```
 
 ## Create Docker Network
 ```docker network create rebit-net```
