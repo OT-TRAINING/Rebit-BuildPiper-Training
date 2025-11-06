@@ -2,9 +2,10 @@
 Rebit-BuildPiper-Training
 
 ## Build Backend Image
-```cd backend/```
-
-docker build -t project-backend .```
+```bash
+cd backend/
+docker build -t project-backend .
+```
 
 ## Build Frontend Image
 ```bash
