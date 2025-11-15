@@ -37,18 +37,15 @@
             </plugin>
 
             <!-- Spring Boot Plugin (adds main class to manifest) -->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring.boot.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+         <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>3.8.1</version>  <!-- Match your version -->
+            <configuration>
+                <mainClass>com.example.BackendApplication</mainClass>  <!-- Replace with your actual main class -->
+            </configuration>
+        </plugin>
         </plugins>
     </build>
 </project>
