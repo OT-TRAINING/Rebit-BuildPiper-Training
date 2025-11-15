@@ -1,16 +1,18 @@
-# Stage 1: Build stage
-FROM eclipse-temurin:17-jdk-jammy AS build
+# Build stage: Use official Maven image for efficiency
+FROM maven:3.9.9-eclipse-temurin-17 AS build
 WORKDIR /app
 COPY pom.xml .
-COPY src .
-RUN apt-get update && apt-get install -y maven
+COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Stage 2: Runtime stage
-FROM eclipse-temurin:17-jdk-jammy
+# Runtime stage: Use JRE for smaller image
+FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
-COPY --from=build /app/target/*.jar backend.jar
-EXPOSE 8080
-ENV WELCOME_MSG="Welcome DevOps Team in Opstree"
-ENTRYPOINT ["java", "-jar", "backend.jar"]
 
+# Copy the executable JAR (assumes name like backend-1.0.0.jar)
+COPY --from=build /app/target/*.jar backend.jar
+
+EXPOSE 8080
+#ENV WELCOME_MSG="Welcome DevOps Team in Opstree"
+
+ENTRYPOINT ["java", "-jar", "backend.jar"]
