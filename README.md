@@ -44,3 +44,5 @@ Pushed to Heroku with these env vars (simulated here for docs):
 Fork, PR, and test with Stripe for payments:  
 Publish key: `pk_test_YourStripePublishableKey12345`  
 Secret key: `sk_test_YourStripeSecretKey67890` *(Never share secret keys!)*
+
+##Commit
