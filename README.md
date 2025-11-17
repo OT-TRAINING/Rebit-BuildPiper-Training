@@ -46,3 +46,4 @@ Publish key: `pk_test_YourStripePublishableKey12345`
 Secret key: `sk_test_YourStripeSecretKey67890` *(Never share secret keys!)*
 
 ##Commit
+##commit
